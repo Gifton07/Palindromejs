@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script></script>
+    <style>
+        #c{
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        max-width: 400px;
+        width: 100%;
+        }
+
+        body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 40px 20px;
+        }
+        h1 {
+        color: #333;
+        }
+
+        input[type="text"] {
+      width: calc(100% - 20px);
+      padding: 10px;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #result {
+      margin-top: 15px;
+      font-size: 1.1rem;
+      color: #ff0000;
+      text-align: center;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="c">
+    <h1>Is Palindrom or Not</h1>
+    <input type="text" placeholder="enter the string" id="in">
+    <button id="ch" onclick="pali()">Check</button>
+    <p id="result"></p>
+    </div>
+
+    <script>
+    function pali() {
+        const inp = document.getElementById('in').value;
+        const out = document.getElementById('result')
+        
+        if(inp ===""){
+            alert("Enter the String");
+            return;
+        }
+
+        const neww = inp.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+        const reversed = neww.split("").reverse().join("");
+
+        if (inp === reversed){
+            result.textContent =`${inp} is a palindrome.`;
+        }else{
+            result.textContent =`${inp} is not a palindrome.`;
+        }
+    }
+    </script>
+
+</body>
+</html>
